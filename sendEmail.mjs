@@ -5,11 +5,11 @@ import merchantOptoutData from "./testData/merchantOptoutData.mjs";
 const createSendEmailCommand = () => {
   return new SendTemplatedEmailCommand({
     Destination: {
-      ToAddresses: ["rcaesar1996@gmail.com", "noreply@kravein.com.au"],
+      ToAddresses: ["rcaesar1996@gmail.com"],
     },
-    TemplateData: JSON.stringify(merchantOptoutData),
+    TemplateData: JSON.stringify({}),
     Source: "noreply@kravein.com.au",
-    Template: "GOOGLE_ORDER_ONLINE_MERCHANT_OPT_OUT",
+    Template: "FANCY_TEMPLATE",
   });
 };
 
@@ -19,7 +19,7 @@ const sendEmail = async () => {
   try {
     return await client.send(sendEmailCommand);
   } catch (e) {
-    console.error("Failed to send email.");
+    console.error("Failed to send email.", e);
     return e;
   }
 };

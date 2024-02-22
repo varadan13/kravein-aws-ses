@@ -1,15 +1,17 @@
-import { UpdateTemplateCommand } from "@aws-sdk/client-ses";
+import { CreateTemplateCommand } from "@aws-sdk/client-ses";
 import client from "./client.mjs";
 
 import googleMerchantOptOut from "./templates/googleMerchantOptOut.mjs";
-const TEMPLATE_NAME = "GOOGLE_ORDER_ONLINE_MERCHANT_OPT_OUT";
+
+import fancytemplate from "./templates/fancytemplate.mjs";
+const TEMPLATE_NAME = "FANCY_TEMPLATE";
 const SUBJECT = "You have a new order online opt out form submission!";
 
 const createCreateTemplateCommand = () => {
-  return new UpdateTemplateCommand({
+  return new CreateTemplateCommand({
     Template: {
       TemplateName: TEMPLATE_NAME,
-      HtmlPart: googleMerchantOptOut,
+      HtmlPart: fancytemplate,
       SubjectPart: SUBJECT,
     },
   });
