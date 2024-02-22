@@ -1,37 +1,20 @@
-import { SendEmailCommand } from "@aws-sdk/client-ses";
+import { SendTemplatedEmailCommand } from "@aws-sdk/client-ses";
 import client from "./client.mjs";
+import merchantOptoutData from "./testData/merchantOptoutData.mjs";
 
-const createSendEmailCommand = (toAddress, fromAddress, message) => {
-  return new SendEmailCommand({
+const createSendEmailCommand = () => {
+  return new SendTemplatedEmailCommand({
     Destination: {
-      ToAddresses: [toAddress],
+      ToAddresses: ["rcaesar1996@gmail.com", "noreply@kravein.com.au"],
     },
-    Message: {
-      Body: {
-        Html: {
-          Charset: "UTF-8",
-          Data: message,
-        },
-        Text: {
-          Charset: "UTF-8",
-          Data: "TEXT_FORMAT_BODY",
-        },
-      },
-      Subject: {
-        Charset: "UTF-8",
-        Data: "You have a new order online opt out form submission",
-      },
-    },
-    Source: fromAddress,
+    TemplateData: JSON.stringify(merchantOptoutData),
+    Source: "noreply@kravein.com.au",
+    Template: "GOOGLE_ORDER_ONLINE_MERCHANT_OPT_OUT",
   });
 };
 
-const sendEmail = async ({ to, message }) => {
-  const sendEmailCommand = createSendEmailCommand(
-    to,
-    "noreply@kravein.com.au",
-    message
-  );
+const sendEmail = async () => {
+  const sendEmailCommand = createSendEmailCommand();
 
   try {
     return await client.send(sendEmailCommand);
@@ -40,5 +23,7 @@ const sendEmail = async ({ to, message }) => {
     return e;
   }
 };
+
+sendEmail();
 
 export default sendEmail;
