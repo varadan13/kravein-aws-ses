@@ -1,10 +1,10 @@
 import express from "express";
-import run from "./run.mjs";
+import sendEmail from "./sendEmail.mjs";
 
 const handler = async (request, response) => {
   const { to = "rcaesar1996@gmail.com", message = "Success" } = request.query;
   try {
-    await run({ to, message });
+    await sendEmail({ to, message });
     response.status(200).json({ to, message });
   } catch {
     response.status(500).send("Not able send email!");

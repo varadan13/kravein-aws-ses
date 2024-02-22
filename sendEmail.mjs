@@ -1,14 +1,5 @@
-import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
-import dotenv from "dotenv";
-dotenv.config();
-
-const client = new SESClient({
-  credentials: {
-    accessKeyId: process.env.ACCESS_KEY_ID,
-    secretAccessKey: process.env.SECRET_ACCESS_KEY,
-  },
-  region: "us-east-1",
-});
+import { SendEmailCommand } from "@aws-sdk/client-ses";
+import client from "./client.mjs";
 
 const createSendEmailCommand = (toAddress, fromAddress, message) => {
   return new SendEmailCommand({
@@ -35,7 +26,7 @@ const createSendEmailCommand = (toAddress, fromAddress, message) => {
   });
 };
 
-const run = async ({ to, message }) => {
+const sendEmail = async ({ to, message }) => {
   const sendEmailCommand = createSendEmailCommand(
     to,
     "noreply@kravein.com.au",
@@ -50,4 +41,4 @@ const run = async ({ to, message }) => {
   }
 };
 
-export default run;
+export default sendEmail;
