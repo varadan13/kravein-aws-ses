@@ -2,16 +2,18 @@ import { CreateTemplateCommand } from "@aws-sdk/client-ses";
 import client from "./client.mjs";
 
 import googleMerchantOptOut from "./templates/googleMerchantOptOut.mjs";
+import verceltemplate from "./templates/verceltemplate.mjs";
+import googleMerchantOptIn from "./templates/googleMerchantOptIn.mjs";
 
 import fancytemplate from "./templates/fancytemplate.mjs";
-const TEMPLATE_NAME = "FANCY_TEMPLATE";
-const SUBJECT = "You have a new order online opt out form submission!";
+const TEMPLATE_NAME = "GOOGLE_MERCHANT_OPT_IN";
+const SUBJECT = "You have a new order online opt in form submission!";
 
 const createCreateTemplateCommand = () => {
   return new CreateTemplateCommand({
     Template: {
       TemplateName: TEMPLATE_NAME,
-      HtmlPart: fancytemplate,
+      HtmlPart: googleMerchantOptIn,
       SubjectPart: SUBJECT,
     },
   });

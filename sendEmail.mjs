@@ -5,11 +5,11 @@ import merchantOptoutData from "./testData/merchantOptoutData.mjs";
 const createSendEmailCommand = () => {
   return new SendTemplatedEmailCommand({
     Destination: {
-      ToAddresses: ["rcaesar1996@gmail.com"],
+      ToAddresses: ["rcaesar1996@gmail.com", "noreply@kravein.com.au"],
     },
     TemplateData: JSON.stringify({}),
     Source: "noreply@kravein.com.au",
-    Template: "FANCY_TEMPLATE",
+    Template: "VERCEL_TEMPLATE",
   });
 };
 
