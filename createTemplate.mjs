@@ -11,6 +11,8 @@ import menuCorrects from "./templates/menuCorrects.mjs";
 import contactUsTemplate from "./templates/contactUsTemplate.mjs";
 import feedbackTemplate from "./templates/feedbackTemplate.mjs";
 
+/* HTML MARKUPS END */
+
 const templateName = {
   FEEDBACK: "FEEDBACK",
   CONTACT_US: "CONTACT_US",
