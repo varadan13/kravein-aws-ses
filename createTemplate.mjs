@@ -54,9 +54,9 @@ const html = {
 const createCreateTemplateCommand = () => {
   return new UpdateTemplateCommand({
     Template: {
-      TemplateName: templateName["FEEDBACK"],
-      HtmlPart: html["FEEDBACK"],
-      SubjectPart: subject["FEEDBACK"],
+      TemplateName: templateName["REPORT_MENU_ERROR"],
+      HtmlPart: html["REPORT_MENU_ERROR"],
+      SubjectPart: subject["REPORT_MENU_ERROR"],
     },
   });
 };
