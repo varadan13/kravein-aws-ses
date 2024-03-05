@@ -12,12 +12,16 @@ import contactUsTemplate from "./templates/contactUsTemplate.mjs";
 import feedbackTemplate from "./templates/feedbackTemplate.mjs";
 import placeReviewTemplate from "./templates/placeReviewTemplate.mjs";
 import placeCorrectionTemplates from "./templates/placeCorrectionTemplates.mjs";
+import addPlaceTemplate from "./templates/addPlaceTemplate.mjs";
+import itemReviewTemplate from "./templates/itemReviewTemplate.mjs";
 
 import testTemplate from "./templates/testTemplate.mjs";
 
 /* HTML MARKUPS END */
 
 const templateName = {
+  ITEM_REVIEW: "ITEM_REVIEW",
+  ADD_PLACE: "ADD_PLACE",
   PLACE_REVIEW: "PLACE_REVIEW",
   FEEDBACK: "FEEDBACK",
   CONTACT_US: "CONTACT_US",
@@ -29,7 +33,9 @@ const templateName = {
 };
 
 const subject = {
-  PLACE_REVIEW: "User submitted Place Review",
+  ITEM_REVIEW: "User submitted item review",
+  ADD_PLACE: "User added a new place",
+  PLACE_REVIEW: "User submitted place review",
   FEEDBACK: "User submitted the feedback form",
   CONTACT_US: "User submitted the contact us form",
   REPORT_MENU_ERROR: "User reported menu or pricing issue",
@@ -41,6 +47,8 @@ const subject = {
 };
 
 const html = {
+  ITEM_REVIEW: itemReviewTemplate,
+  ADD_PLACE: addPlaceTemplate,
   PLACE_REVIEW: placeReviewTemplate,
   PLACE_CORRECTION: placeCorrectionTemplates,
   FEEDBACK: feedbackTemplate,
@@ -54,9 +62,9 @@ const html = {
 const createCreateTemplateCommand = () => {
   return new UpdateTemplateCommand({
     Template: {
-      TemplateName: templateName["REPORT_MENU_ERROR"],
-      HtmlPart: html["REPORT_MENU_ERROR"],
-      SubjectPart: subject["REPORT_MENU_ERROR"],
+      TemplateName: templateName["ITEM_REVIEW"],
+      HtmlPart: html["ITEM_REVIEW"],
+      SubjectPart: subject["ITEM_REVIEW"],
     },
   });
 };

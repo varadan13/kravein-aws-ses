@@ -7,13 +7,13 @@ const createSendEmailCommand = () => {
       ToAddresses: ["rcaesar1996@gmail.com"],
     },
     TemplateData: JSON.stringify({
-      feedback_type: "Inappropriate Photos or Reviews",
-      user_id: "123123123123123",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis",
+      itemReviewUrl:
+        "https://dev1.admin.portal.kravein.com.au/place-approval-update/6d5ca11c-60be-47cf-a936-099db3bb5e9f",
+      username: "Varadan",
+      userId: "6d5ca11c-60be-47cf-a936-099db3bb5e9f",
     }),
     Source: "noreply@kravein.com.au",
-    Template: "FEEDBACK",
+    Template: "ITEM_REVIEW",
   });
 };
 
