@@ -1,15 +1,19 @@
 import { SendTemplatedEmailCommand } from "@aws-sdk/client-ses";
 import client from "./client.mjs";
-import merchantOptoutData from "./testData/merchantOptoutData.mjs";
 
 const createSendEmailCommand = () => {
   return new SendTemplatedEmailCommand({
     Destination: {
-      ToAddresses: ["rcaesar1996@gmail.com", "noreply@kravein.com.au"],
+      ToAddresses: ["rcaesar1996@gmail.com"],
     },
-    TemplateData: JSON.stringify({}),
+    TemplateData: JSON.stringify({
+      feedback_type: "Inappropriate Photos or Reviews",
+      user_id: "123123123123123",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis",
+    }),
     Source: "noreply@kravein.com.au",
-    Template: "VERCEL_TEMPLATE",
+    Template: "FEEDBACK",
   });
 };
 

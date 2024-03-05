@@ -1,4 +1,4 @@
-export default `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html
   data-editor-version="2"
   class="sg-campaigns"
@@ -229,7 +229,9 @@ export default `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http:/
                                 >
                                   <tr>
                                     <td role="module-content">
-                                      <p>Feedback form submission</p>
+                                      <p>
+                                        New Order: Please confirm immediately
+                                      </p>
                                     </td>
                                   </tr>
                                 </table>
@@ -416,10 +418,11 @@ export default `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http:/
                                                                   sans-serif;
                                                                 font-size: 16px;
                                                               "
-                                                              ><strong>
-                                                                Feedback form
-                                                                submission
-                                                              </strong></span
+                                                              ><strong
+                                                                >New Order -
+                                                                Please Confirm
+                                                                ASAP</strong
+                                                              ></span
                                                             >
                                                           </div>
                                                           <div></div>
@@ -436,51 +439,7 @@ export default `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http:/
                                     </tr>
                                   </tbody>
                                 </table>
-                                <table
-                                  class="module"
-                                  role="module"
-                                  data-type="text"
-                                  border="0"
-                                  cellpadding="0"
-                                  cellspacing="0"
-                                  width="100%"
-                                  style="table-layout: fixed; min-height: 240px;"
-                                  data-muid="0902f2b3-2491-4ed3-9dba-9e6cc3557268"
-                                  data-mc-module-version="2019-10-22"
-                                >
-                                  <tbody>
-                                    <tr>
-                                      <td
-                                        style="
-                                          padding: 18px 0px 18px 18px;
-                                          line-height: 22px;
-                                          text-align: inherit;
-                                        "
-                                        height="100%"
-                                        valign="top"
-                                        bgcolor=""
-                                        role="module-content"
-                                      >
-                                        <div>
-                                          <div
-                                            style="
-                                              font-family: inherit;
-                                              text-align: start;
-                                            "
-                                          >
-                                            <p style="font-size:16px;font-weight:600;">
-                                            {{feedback_type}}
-                                            </p>
-                                            <p>{{description}}</p>
-                                            <br>
-                                            <p style="text-decoration: underline;">Submitted by</p>
-                                            <p>User Id : {{user_id}}</p>
-                                          </div>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
+                                {ENTER_HERE}
                               </td>
                             </tr>
                           </table>
@@ -504,4 +463,3 @@ export default `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http:/
     </center>
   </body>
 </html>
-`;
