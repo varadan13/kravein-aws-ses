@@ -1,5 +1,7 @@
 const obj = {
   placeReviewUrl: "",
   username: "",
-  userId: "",
+  userEmail: "",
+  placeName: "",
+  placeAddress: "",
 };

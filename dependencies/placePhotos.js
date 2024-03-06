@@ -1,7 +1,7 @@
 const obj = {
-  addPlaceUrl: "",
-  userName: "",
-  userEmail: "",
   placeName: "",
   placeAddress: "",
+  userName: "",
+  userEmail: "",
+  placePhotoUrl: "",
 };

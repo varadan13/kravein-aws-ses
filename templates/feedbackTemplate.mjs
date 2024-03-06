@@ -474,7 +474,8 @@ export default `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http:/
                                             <p>{{description}}</p>
                                             <br>
                                             <p style="text-decoration: underline;">Submitted by</p>
-                                            <p>User Id : {{user_id}}</p>
+                                            <p>{{userName}}</p>
+                                            <p>{{userEmail}}</p>
                                           </div>
                                         </div>
                                       </td>

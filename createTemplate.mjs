@@ -15,6 +15,8 @@ import placeCorrectionTemplates from "./templates/placeCorrectionTemplates.mjs";
 import addPlaceTemplate from "./templates/addPlaceTemplate.mjs";
 import itemReviewTemplate from "./templates/itemReviewTemplate.mjs";
 import claimPlaceTemplate from "./templates/claimPlaceTemplate.mjs";
+import placePhotoTemplate from "./templates/placePhotoTemplate.mjs";
+import itemPhotoTemplate from "./templates/itemPhotoTemplate.mjs";
 
 import testTemplate from "./templates/testTemplate.mjs";
 
@@ -32,6 +34,8 @@ const templateName = {
   PLACE_CORRECTION: "PLACE_CORRECTION",
   TEST_TEMPLATE: "TEST_TEMPLATE",
   CLAIM_PLACE: "CLAIM_PLACE",
+  PLACE_PHOTOS: "PLACE_PHOTOS",
+  ITEM_PHOTOS: "ITEM_PHOTOS",
 };
 
 const subject = {
@@ -47,6 +51,8 @@ const subject = {
   PLACE_CORRECTION: "User reported place correction!",
   TEST_TEMPLATE: "TEST_TEMPLATE",
   CLAIM_PLACE: "User submitted a place claim",
+  PLACE_PHOTOS: "User submitted place photos",
+  ITEM_PHOTOS: "User submitted item photos",
 };
 
 const html = {
@@ -61,14 +67,16 @@ const html = {
   GOOGLE_MERCHANT_OPT_OUT: googleMerchantOptIn,
   TEST_TEMPLATE: testTemplate,
   CLAIM_PLACE: claimPlaceTemplate,
+  PLACE_PHOTOS: placePhotoTemplate,
+  ITEM_PHOTOS: itemPhotoTemplate,
 };
 
 const createCreateTemplateCommand = () => {
-  return new CreateTemplateCommand({
+  return new UpdateTemplateCommand({
     Template: {
-      TemplateName: templateName["CLAIM_PLACE"],
-      HtmlPart: html["CLAIM_PLACE"],
-      SubjectPart: subject["CLAIM_PLACE"],
+      TemplateName: templateName["FEEDBACK"],
+      HtmlPart: html["FEEDBACK"],
+      SubjectPart: subject["FEEDBACK"],
     },
   });
 };

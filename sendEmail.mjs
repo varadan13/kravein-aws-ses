@@ -7,17 +7,15 @@ const createSendEmailCommand = () => {
       ToAddresses: ["rcaesar1996@gmail.com"],
     },
     TemplateData: JSON.stringify({
-      name: "Aneesh",
-      relationship: "asdasd",
-      email: "sdadsd@sad",
-      phone: "2113123213",
-      address: "213123",
-      linkedin: "123213",
-      services: "123123123",
-      claimPlaceUrl: "sdfsdfsdf",
+      placeName: "sdsd sdsd",
+      placeAddress: "sdsd sd",
+      userName: "sdsd",
+      userEmail: "sdsds",
+      itemPhotoUrl: "sdsdsd",
+      itemName: "sdsdf sdsd",
     }),
     Source: "noreply@kravein.com.au",
-    Template: "CLAIM_PLACE",
+    Template: "ITEM_PHOTOS",
   });
 };
 
