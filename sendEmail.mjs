@@ -7,17 +7,17 @@ const createSendEmailCommand = () => {
       ToAddresses: ["rcaesar1996@gmail.com"],
     },
     TemplateData: JSON.stringify({
-      whatsWrong: "asdasdasd",
-      placeInfo: "sadasdasd",
-      business_types: "sadasdsad",
-      service_category: "wqeqwe",
-      feature_types: "--",
-      cuisine_style: "weqwe",
-      good_for: "qweqwe",
-      other_details: "qweqweqwe",
+      name: "Aneesh",
+      relationship: "asdasd",
+      email: "sdadsd@sad",
+      phone: "2113123213",
+      address: "213123",
+      linkedin: "123213",
+      services: "123123123",
+      claimPlaceUrl: "sdfsdfsdf",
     }),
     Source: "noreply@kravein.com.au",
-    Template: "PLACE_CORRECTION",
+    Template: "CLAIM_PLACE",
   });
 };
 

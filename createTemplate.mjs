@@ -14,6 +14,7 @@ import placeReviewTemplate from "./templates/placeReviewTemplate.mjs";
 import placeCorrectionTemplates from "./templates/placeCorrectionTemplates.mjs";
 import addPlaceTemplate from "./templates/addPlaceTemplate.mjs";
 import itemReviewTemplate from "./templates/itemReviewTemplate.mjs";
+import claimPlaceTemplate from "./templates/claimPlaceTemplate.mjs";
 
 import testTemplate from "./templates/testTemplate.mjs";
 
@@ -30,6 +31,7 @@ const templateName = {
   GOOGLE_MERCHANT_OPT_OUT: "GOOGLE_MERCHANT_OPT_OUT",
   PLACE_CORRECTION: "PLACE_CORRECTION",
   TEST_TEMPLATE: "TEST_TEMPLATE",
+  CLAIM_PLACE: "CLAIM_PLACE",
 };
 
 const subject = {
@@ -44,6 +46,7 @@ const subject = {
     "You have a new order online opt out form submission!",
   PLACE_CORRECTION: "User reported place correction!",
   TEST_TEMPLATE: "TEST_TEMPLATE",
+  CLAIM_PLACE: "User submitted a place claim",
 };
 
 const html = {
@@ -57,14 +60,15 @@ const html = {
   GOOGLE_MERCHANT_OPT_IN: googleMerchantOptOut,
   GOOGLE_MERCHANT_OPT_OUT: googleMerchantOptIn,
   TEST_TEMPLATE: testTemplate,
+  CLAIM_PLACE: claimPlaceTemplate,
 };
 
 const createCreateTemplateCommand = () => {
-  return new UpdateTemplateCommand({
+  return new CreateTemplateCommand({
     Template: {
-      TemplateName: templateName["PLACE_CORRECTION"],
-      HtmlPart: html["PLACE_CORRECTION"],
-      SubjectPart: subject["PLACE_CORRECTION"],
+      TemplateName: templateName["CLAIM_PLACE"],
+      HtmlPart: html["CLAIM_PLACE"],
+      SubjectPart: subject["CLAIM_PLACE"],
     },
   });
 };
