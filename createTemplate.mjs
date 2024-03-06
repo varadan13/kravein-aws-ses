@@ -62,9 +62,9 @@ const html = {
 const createCreateTemplateCommand = () => {
   return new UpdateTemplateCommand({
     Template: {
-      TemplateName: templateName["ITEM_REVIEW"],
-      HtmlPart: html["ITEM_REVIEW"],
-      SubjectPart: subject["ITEM_REVIEW"],
+      TemplateName: templateName["PLACE_CORRECTION"],
+      HtmlPart: html["PLACE_CORRECTION"],
+      SubjectPart: subject["PLACE_CORRECTION"],
     },
   });
 };
