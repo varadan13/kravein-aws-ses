@@ -1,24 +1,28 @@
 const fs = require("fs");
 const handlebars = require("handlebars");
-const t = require("./data");
 
-// Read the Handlebars template file
-const templateSource = fs.readFileSync("emailTemplate.hbs", "utf-8");
+const templateSource = fs.readFileSync("lineItems.hbs", "utf8");
 
-// Compile the template
 const template = handlebars.compile(templateSource);
 
-// Provide data to the template
 const data = {
-  place: t.place,
-  menu: {
-    service_type: t.service_type_setting.service_type,
-    order_reference: t.order_reference,
-    created_at: "2024-03-06",
-  },
+  items: [
+    {
+      variant_name: "chicken",
+      name: "Noodles",
+      quantity: 2,
+      price_per_item: 12.0,
+      overall_price: 38.0,
+      modifier: [
+        { name: "Soya sauces", quantity: 1, price_per_item: 2.0 },
+        { name: "Soya sauces", quantity: 1, price_per_item: 2.0 },
+      ],
+    },
+  ],
 };
 
-// Render the template with the data
-const html = template(data);
+const result = template(data);
 
-console.log(html);
+console.log(result);
+
+fs.writeFileSync("output.html", result);

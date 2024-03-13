@@ -1,0 +1,43 @@
+{{#each items}}
+  <div>
+    <div>
+      <div style="color: #4a4a4a; font: 14.4px">
+        <p>
+          {{this.quantity}}
+          {{this.name}}
+          ${{this.overall_price}}
+        </p>
+      </div>
+      <div style="color: #737373; font: 12.8px">
+        {{#if this.variant_name}}
+          <p>
+            {{this.variant_name}}
+            ( ${{this.price_per_item}}
+            x
+            {{this.quantity}}
+            )
+          </p>
+        {{else}}
+          <p>
+            {{this.name}}
+            ( ${{this.price_per_item}}
+            x
+            {{this.quantity}}
+            )
+          </p>
+        {{/if}}
+        {{#if this.modifier}}
+          {{#each this.modifier}}
+            <p>
+              {{this.name}}
+              ( ${{this.price_per_item}}
+              x
+              {{this.quantity}}
+              )
+            </p>
+          {{/each}}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+{{/each}}

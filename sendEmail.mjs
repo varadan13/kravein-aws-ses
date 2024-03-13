@@ -6,18 +6,13 @@ const createSendEmailCommand = () => {
     Destination: {
       ToAddresses: ["rcaesar1996@gmail.com"],
     },
-    TemplateData: JSON.stringify({
-      placeName: "sdsd sdsd",
-      placeAddress: "sdsd sd",
-      userName: "sdsd",
-      userEmail: "sdsds",
-      itemPhotoUrl: "sdsdsd",
-      itemName: "sdsdf sdsd",
-    }),
+    TemplateData: JSON.stringify({}),
     Source: "noreply@kravein.com.au",
-    Template: "ITEM_PHOTOS",
+    Template: "TEST_TEMPLATE",
   });
 };
+// userName: "sdfsdf sdf",
+// userEmail: "sds",
 
 const sendEmail = async () => {
   const sendEmailCommand = createSendEmailCommand();

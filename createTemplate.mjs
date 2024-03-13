@@ -18,6 +18,8 @@ import claimPlaceTemplate from "./templates/claimPlaceTemplate.mjs";
 import placePhotoTemplate from "./templates/placePhotoTemplate.mjs";
 import itemPhotoTemplate from "./templates/itemPhotoTemplate.mjs";
 
+import orderReceivedTemplate from "./templates/orderReceivedTemplate.mjs";
+
 import testTemplate from "./templates/testTemplate.mjs";
 
 /* HTML MARKUPS END */
@@ -36,6 +38,7 @@ const templateName = {
   CLAIM_PLACE: "CLAIM_PLACE",
   PLACE_PHOTOS: "PLACE_PHOTOS",
   ITEM_PHOTOS: "ITEM_PHOTOS",
+  ORDER_RECEIVED: "ORDER_RECEIVED",
 };
 
 const subject = {
@@ -53,6 +56,7 @@ const subject = {
   CLAIM_PLACE: "User submitted a place claim",
   PLACE_PHOTOS: "User submitted place photos",
   ITEM_PHOTOS: "User submitted item photos",
+  ORDER_RECEIVED: "Recieved an order",
 };
 
 const html = {
@@ -69,14 +73,15 @@ const html = {
   CLAIM_PLACE: claimPlaceTemplate,
   PLACE_PHOTOS: placePhotoTemplate,
   ITEM_PHOTOS: itemPhotoTemplate,
+  ORDER_RECEIVED: orderReceivedTemplate,
 };
 
 const createCreateTemplateCommand = () => {
   return new UpdateTemplateCommand({
     Template: {
-      TemplateName: templateName["FEEDBACK"],
-      HtmlPart: html["FEEDBACK"],
-      SubjectPart: subject["FEEDBACK"],
+      TemplateName: templateName["TEST_TEMPLATE"],
+      HtmlPart: html["TEST_TEMPLATE"],
+      SubjectPart: subject["TEST_TEMPLATE"],
     },
   });
 };

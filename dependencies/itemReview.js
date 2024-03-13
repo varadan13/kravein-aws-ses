@@ -6,3 +6,12 @@ const obj = {
   placeName: "asaswq",
   placeAddress: "asd asdasc asdasd",
 };
+
+{
+	itemName:"",
+	itemReviewUrl:"",
+	placeAddress:"",
+	placeName:"",
+	userEmail:"",
+	username:"",
+}
